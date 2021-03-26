@@ -1001,7 +1001,9 @@ h.extend(mixitup.Mixer.prototype,
 
             h.removeWhitespace(el.previousSibling);
 
-            el.parentElement.removeChild(el);
+            if (el.parentElement) {
+                el.parentElement.removeChild(el);
+            }
         }
 
         whitespace = nextSibling ? nextSibling.previousSibling : self.dom.parent.lastChild;
